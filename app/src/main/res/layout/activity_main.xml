@@ -13,318 +13,330 @@
         android:layout_width="match_parent"
         android:layout_height="340dp"
         android:background="@drawable/card"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Text"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="216dp"
         android:layout_marginEnd="36dp"
         android:alpha="0.75"
+        android:ellipsize="end"
         android:fontFamily="@font/doppio_one_regular"
         android:gravity="end|center_vertical"
+        android:maxLines="2"
         android:text=""
         android:textColor="#55423866"
         android:textSize="20sp"
-        android:maxLines="2"
-        android:ellipsize="end"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/resultTextView"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="240dp"
         android:layout_marginEnd="36dp"
+        android:layout_marginBottom="32dp"
+        android:ellipsize="end"
         android:fontFamily="@font/doppio_one_regular"
         android:gravity="end|center_vertical"
+        android:maxLines="2"
         android:text=""
         android:textColor="@color/darkBrown"
         android:textSize="36sp"
-        android:maxLines="2"
-        android:ellipsize="end"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Text"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/divider"
         android:layout_width="32dp"
         android:layout_height="4dp"
-        android:layout_marginTop="330dp"
         android:background="@drawable/rectangle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- الصف الأول -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Ac"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/ac"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background" />
 
     <ImageButton
         android:id="@+id/back"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@null"
         android:src="@drawable/arrow_left_02"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:stateListAnimator="@null"
+        app:layout_constraintEnd_toStartOf="@id/divide"
+        app:layout_constraintStart_toEndOf="@id/Ac"
+        app:layout_constraintTop_toTopOf="@id/Ac" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/divide"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/divide"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/div"
+        app:layout_constraintStart_toEndOf="@id/back"
+        app:layout_constraintTop_toTopOf="@+id/Ac" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/div"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/div"
         android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divide"
+        app:layout_constraintTop_toTopOf="@+id/Ac" />
 
-    <!-- الصف الثاني -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/seven"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="446dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/seven"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/Ac"
+        app:layout_constraintStart_toStartOf="@+id/Ac"
+        app:layout_constraintTop_toBottomOf="@+id/Ac" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/eight"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="446dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/eight"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        app:layout_constraintEnd_toEndOf="@+id/back"
+        app:layout_constraintStart_toStartOf="@+id/back"
+        app:layout_constraintTop_toTopOf="@+id/seven" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nine"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="446dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/nine"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/divide"
+        app:layout_constraintStart_toStartOf="@+id/divide"
+        app:layout_constraintTop_toTopOf="@+id/eight" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/mul"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="446dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/mul"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/div"
+        app:layout_constraintStart_toStartOf="@+id/div"
+        app:layout_constraintTop_toTopOf="@+id/nine" />
 
-    <!-- الصف الثالث -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/four"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="532dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/four"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/seven"
+        app:layout_constraintTop_toBottomOf="@+id/seven" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/five"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="532dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/five"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/eight"
+        app:layout_constraintStart_toStartOf="@+id/eight"
+        app:layout_constraintTop_toTopOf="@+id/four" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/six"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="532dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/six"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/nine"
+        app:layout_constraintStart_toStartOf="@+id/nine"
+        app:layout_constraintTop_toTopOf="@+id/five" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="532dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/add"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/mul"
+        app:layout_constraintStart_toStartOf="@+id/mul"
+        app:layout_constraintTop_toTopOf="@+id/six" />
 
-    <!-- الصف الرابع -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/one"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="618dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/one"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/four"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/four"
+        app:layout_constraintTop_toBottomOf="@+id/four" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/two"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="618dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/two"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/five"
+        app:layout_constraintStart_toStartOf="@+id/five"
+        app:layout_constraintTop_toTopOf="@+id/one" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/three"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="618dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/three"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/six"
+        app:layout_constraintStart_toStartOf="@+id/six"
+        app:layout_constraintTop_toTopOf="@+id/two" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sub"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="618dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/sub"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/add"
+        app:layout_constraintStart_toStartOf="@+id/add"
+        app:layout_constraintTop_toTopOf="@+id/three" />
 
-    <!-- الصف الخامس -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/plusMinus"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="704dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/plas_minus"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/one"
+        app:layout_constraintStart_toStartOf="@+id/one"
+        app:layout_constraintTop_toBottomOf="@+id/one" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/zero"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="704dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/zero"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/two"
+        app:layout_constraintStart_toStartOf="@+id/two"
+        app:layout_constraintTop_toTopOf="@+id/plusMinus" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dot"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="704dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/dot"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/three"
+        app:layout_constraintStart_toStartOf="@+id/three"
+        app:layout_constraintTop_toTopOf="@+id/zero" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/equals"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="704dp"
         android:fontFamily="@font/doppio_one_regular"
+        android:stateListAnimator="@null"
         android:text="@string/equals"
         android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/sub"
+        app:layout_constraintStart_toStartOf="@+id/sub"
+        app:layout_constraintTop_toTopOf="@+id/dot" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
