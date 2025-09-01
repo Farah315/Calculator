@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="heba">heba</string>
+    <string name="enter_ur_info">Enter ur info</string>
+    <string name="user_name">please enter ur name</string>
+    <string name="submit">submit</string>
+    <string name="description">Description</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="login">login</string>
+    <string name="plas_minus">±</string>
+    <string name="ac">AC</string>
+    <string name="add">+</string>
+    <string name="div">/</string>
+    <string name="divide">%</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="mul">×</string>
+    <string name="zero">0</string>
+    <string name="two">2</string>
+    <string name="sub">−</string>
+    <string name="three">3</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="four">4</string>
+    <string name="one">1</string>
+    <string name="five">5</string>
+    <string name="equals">=</string>
+    <string name="dot">.</string>
+</resources>

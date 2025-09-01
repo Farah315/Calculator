@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الالة الحاسبة</string>
+    <string name="heba">هبوش</string>
+    <string name="enter_ur_info">ادخل معلوماتك</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="submit">تاكيد</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="farahButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/my_button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/textSize16</item>
+    </style>
+    <style name="circleButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">22sp</item>
+        <item name="fontFamily">@font/doppio_one_regular</item>
+    </style>
+    <style name="circleButton.Normal" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/num_circle_button</item>
+        <item name="android:textColor">@color/darkBrown</item>
+    </style>
+    <style name="circleButton.Operator" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/circle_button</item>
+        <item name="android:textColor">@color/lightGray</item>
+    </style>
+    <style name="circle">
+        <item name="cornerSize">40dp</item>
+    </style>
+
+    <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
+</resources>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingBottom="24dp"
+
+    >
+
+    <TextView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="374dp"
+        android:background="@drawable/card"
+        app:layout_constraintBottom_toTopOf="@+id/divide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:layout_constraintVertical_bias="0.884" />
+
+    <TextView
+        android:id="@+id/Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="468dp"
+        android:alpha="0.75"
+        android:fontFamily="@font/doppio_one_regular"
+        android:gravity="end"
+        android:text="12+5"
+        android:textColor="#554238"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/plusMinus"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/background" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="424dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:gravity="end"
+        android:text="125"
+        android:textColor="@color/darkBrown"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/plusMinus"
+        app:layout_constraintEnd_toEndOf="@+id/background"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/background" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plusMinus"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="±"
+        app:layout_constraintEnd_toStartOf="@+id/zero"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/zero"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/dot"
+        app:layout_constraintStart_toEndOf="@+id/plusMinus"
+        app:layout_constraintBaseline_toBaselineOf="@id/plusMinus"
+        app:layout_constraintBottom_toBottomOf="@+id/plusMinus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dot"
+        style="@style/circleButton.Normal"
+        
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="."
+        app:layout_constraintEnd_toStartOf="@+id/equals"
+        app:layout_constraintStart_toEndOf="@+id/zero"
+        app:layout_constraintBaseline_toBaselineOf="@id/plusMinus"
+        app:layout_constraintBottom_toBottomOf="@+id/zero" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/equals"
+        style="@style/circleButton.Operator"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="="
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dot"
+        app:layout_constraintBaseline_toBaselineOf="@id/plusMinus"
+        app:layout_constraintBottom_toBottomOf="@+id/dot" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/one"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/two"
+        app:layout_constraintBaseline_toBaselineOf="@id/two"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/plusMinus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/two"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@+id/three"
+        app:layout_constraintStart_toEndOf="@+id/one"
+        app:layout_constraintBottom_toBottomOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/three"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="3"
+        app:layout_constraintEnd_toStartOf="@+id/sub"
+        app:layout_constraintBaseline_toBaselineOf="@id/two"
+        app:layout_constraintStart_toEndOf="@+id/two"
+        app:layout_constraintBottom_toBottomOf="@+id/two" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sub"
+        style="@style/circleButton.Operator"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="−"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/two"
+        app:layout_constraintStart_toEndOf="@+id/three"
+        app:layout_constraintBottom_toBottomOf="@+id/three" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/four"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="4"
+        app:layout_constraintEnd_toStartOf="@+id/five"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/five"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="5"
+        app:layout_constraintBaseline_toBaselineOf="@id/four"
+        app:layout_constraintEnd_toStartOf="@+id/six"
+        app:layout_constraintStart_toEndOf="@+id/four"
+        app:layout_constraintBottom_toBottomOf="@+id/four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/six"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        app:layout_constraintBaseline_toBaselineOf="@id/four"
+        android:text="6"
+        app:layout_constraintEnd_toStartOf="@+id/add"
+        app:layout_constraintStart_toEndOf="@+id/five"
+        app:layout_constraintBottom_toBottomOf="@+id/five" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add"
+        style="@style/circleButton.Operator"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/six"
+        app:layout_constraintBottom_toBottomOf="@+id/six" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/seven"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:textFontWeight="400"
+        android:text="7"
+        app:layout_constraintEnd_toStartOf="@+id/eight"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/eight"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@+id/nine"
+        app:layout_constraintStart_toEndOf="@+id/seven"
+        app:layout_constraintBaseline_toBaselineOf="@id/seven"
+        app:layout_constraintBottom_toBottomOf="@+id/seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nine"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="9"
+        app:layout_constraintEnd_toStartOf="@+id/mul"
+        app:layout_constraintStart_toEndOf="@+id/eight"
+        app:layout_constraintBaseline_toBaselineOf="@id/seven"
+        app:layout_constraintBottom_toBottomOf="@+id/eight" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mul"
+        style="@style/circleButton.Operator"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="×"
+        android:textFontWeight="400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nine"
+        app:layout_constraintBottom_toBottomOf="@+id/nine" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Ac"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="AC"
+        app:layout_constraintEnd_toStartOf="@+id/back"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/seven" />
+
+    <ImageButton
+        android:id="@+id/back"
+        style="@style/circleButton.Normal"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:contentDescription="@null"
+        android:src="@drawable/arrow_left_02"
+        app:layout_constraintEnd_toStartOf="@+id/divide"
+        app:layout_constraintStart_toEndOf="@+id/Ac"
+        app:layout_constraintBottom_toBottomOf="@+id/Ac" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/divide"
+        style="@style/circleButton.Operator"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="%"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/div"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintBaseline_toBaselineOf="@id/Ac"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/div"
+        style="@style/circleButton.Operator"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:fontFamily="@font/doppio_one_regular"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divide"
+        app:layout_constraintBottom_toBottomOf="@+id/divide" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
