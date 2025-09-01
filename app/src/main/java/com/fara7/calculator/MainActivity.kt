@@ -428,13 +428,10 @@ class MainActivity : AppCompatActivity() {
      * Modified to show current expression in result area and completed expression in expression area
      */
     private fun refreshDisplay() {
-        // Show current build expression in the result display (bottom)
         val displayResult = when {
-            // If we have a completed expression to show, show only the final result
             completedExpressionToShow.isNotEmpty() -> {
                 if (currentInputNumber.isEmpty()) "0" else currentInputNumber
             }
-            // If we're building an expression, show the whole thing
             currentExpression.isNotEmpty() -> {
                 if (currentInputNumber.isNotEmpty() && !isStartingNewOperation) {
                     "$currentExpression $currentInputNumber"
@@ -442,16 +439,14 @@ class MainActivity : AppCompatActivity() {
                     currentExpression
                 }
             }
-            // Just show current number or 0
             else -> if (currentInputNumber.isEmpty()) "0" else currentInputNumber
         }
         resultDisplay.text = displayResult
 
-        // Show completed expression in the expression display (top) only after equals is pressed
         val displayExpression = if (completedExpressionToShow.isNotEmpty()) {
             completedExpressionToShow
         } else {
-            "" // Keep expression area empty while building
+            ""
         }
         expressionDisplay.text = displayExpression
 
