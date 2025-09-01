@@ -92,10 +92,6 @@ class MainActivity : AppCompatActivity() {
     /**
      * handleNumberInput - processes when someone taps a number button
      * @param digit the number that was pressed (as a string)
-     *
-     * This handles adding digits to the current number being typed.
-     * It's got some smart logic to prevent numbers from getting too long
-     * and handles starting fresh after an error or completed calculation.
      */
     private fun handleNumberInput(digit: String) {
         if (isErrorState()) {
@@ -141,14 +137,12 @@ class MainActivity : AppCompatActivity() {
     /**
      * handleOperatorInput - processes when someone taps an operator button (+, -, etc.)
      * @param operator the math symbol that was pressed
-     *
-     * This is where the magic happens for chaining operations.
-     * It handles building up complex expressions like "5 + 3 × 2 - 1"
      */
     private fun handleOperatorInput(operator: String) {
         if (isErrorState()) {
             handleAllClearPress()
         }
+
         if (completedExpressionToShow.isNotEmpty()) {
             completedExpressionToShow = ""
             currentExpression = currentInputNumber
@@ -200,10 +194,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * handleEqualsPress - processes when someone hits the equals button
-     *
-     * This is the big moment - actually calculating the result!
-     * It evaluates the whole expression and shows the result.
-     * The completed expression stays visible until user starts something new.
      */
     private fun handleEqualsPress() {
         if (currentInputNumber.isNotEmpty() && operatorsInExpression.isNotEmpty()) {
@@ -258,9 +248,6 @@ class MainActivity : AppCompatActivity() {
      * @param numbers list of numbers in the expression
      * @param operators list of operators between the numbers
      * @return the final calculated result
-     *
-     * This follows proper order of operations (multiplication/division first, then addition/subtraction).
-     * It's like doing math the way you learned in school but in code form.
      */
     private fun performCalculation(
         numbers: MutableList<Double>,
@@ -316,9 +303,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * resetCalculationState - clears all the calculation variables for a fresh start
-     *
-     * This is like wiping the slate clean so we can start a new calculation.
-     * Gets called after completing a calculation or hitting AC.
      */
     private fun resetCalculationState() {
         currentExpression = ""
@@ -330,9 +314,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * handleAllClearPress - resets everything back to initial state
-     *
-     * This is the nuclear option - clears absolutely everything.
-     * Like turning the calculator off and back on.
      */
     private fun handleAllClearPress() {
         currentInputNumber = ""
@@ -344,9 +325,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * handleBackspacePress - handles the back button functionality
-     *
-     * This is kinda complex because it does different things depending on the state.
-     * Sometimes it goes back in history, sometimes it deletes digits.
      */
     private fun handleBackspacePress() {
         if (calculationHistory.isNotEmpty() && currentHistoryPosition >= 0 &&
@@ -389,9 +367,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * handleDecimalPointPress - adds a decimal point to the current number
-     *
-     * Makes sure we don't add multiple decimal points to the same number.
-     * Also handles starting a new number with "0." if needed.
      */
     private fun handleDecimalPointPress() {
         if (isErrorState()) {
@@ -428,8 +403,6 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * handlePlusMinusPress - toggles the sign of the current number
-     *
-     * Flips between positive and negative. Pretty straightforward.
      */
     private fun handlePlusMinusPress() {
         if (isErrorState()) {
@@ -452,16 +425,13 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * refreshDisplay - updates what the user sees on screen
-     *
-     * This figures out what to show in both the expression area and result area.
-     * It's called after pretty much every user action to keep things in sync.
+     * Modified to show current expression in result area and completed expression in expression area
      */
     private fun refreshDisplay() {
-        val displayInput = if (currentInputNumber.isEmpty()) "0" else currentInputNumber
-        resultDisplay.text = displayInput
-
-        val displayExpression = when {
-            completedExpressionToShow.isNotEmpty() -> completedExpressionToShow
+        val displayResult = when {
+            completedExpressionToShow.isNotEmpty() -> {
+                if (currentInputNumber.isEmpty()) "0" else currentInputNumber
+            }
             currentExpression.isNotEmpty() -> {
                 if (currentInputNumber.isNotEmpty() && !isStartingNewOperation) {
                     "$currentExpression $currentInputNumber"
@@ -469,22 +439,24 @@ class MainActivity : AppCompatActivity() {
                     currentExpression
                 }
             }
-
-            else -> ""
+            else -> if (currentInputNumber.isEmpty()) "0" else currentInputNumber
         }
+        resultDisplay.text = displayResult
 
+        val displayExpression = if (completedExpressionToShow.isNotEmpty()) {
+            completedExpressionToShow
+        } else {
+            ""
+        }
         expressionDisplay.text = displayExpression
 
-        adjustTextSizesForLength(displayExpression, displayInput)
+        adjustTextSizesForLength(displayExpression, displayResult)
     }
 
     /**
      * adjustTextSizesForLength - makes text smaller when expressions get long
      * @param expressionText the expression text to check length of
      * @param resultText the result text to check length of
-     *
-     * This keeps things readable even when you have really long expressions or results.
-     * It automatically shrinks the text size when needed.
      */
     private fun adjustTextSizesForLength(expressionText: String, resultText: String) {
         val shouldShrinkExpression =
@@ -513,9 +485,6 @@ class MainActivity : AppCompatActivity() {
      * @param textView the TextView to animate
      * @param fromSize starting text size
      * @param toSize ending text size
-     *
-     * This makes the text size changes look smooth instead of jarring.
-     * It's a nice little touch that makes the app feel more polished.
      */
     private fun animateTextSizeChange(textView: TextView, fromSize: Float, toSize: Float) {
         val animator = ValueAnimator.ofFloat(fromSize, toSize)
@@ -533,9 +502,6 @@ class MainActivity : AppCompatActivity() {
      * formatNumberForDisplay - formats numbers to look nice on screen
      * @param value the number to format
      * @return formatted string representation
-     *
-     * This handles making numbers look good - removes unnecessary decimal places,
-     * handles infinity and errors, and switches to scientific notation for huge numbers.
      */
     private fun formatNumberForDisplay(value: Double): String {
         return when {
@@ -564,8 +530,6 @@ class MainActivity : AppCompatActivity() {
     /**
      * isErrorState - checks if we're currently showing an error message
      * @return true if showing error, false otherwise
-     *
-     * Helper function to quickly check if we need to clear errors before doing something.
      */
     private fun isErrorState(): Boolean {
         return currentInputNumber == "Error" ||
