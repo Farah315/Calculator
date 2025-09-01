@@ -8,29 +8,29 @@
     android:fitsSystemWindows="true"
     android:padding="16dp">
 
-
     <TextView
         android:id="@+id/background"
         android:layout_width="match_parent"
-        android:layout_height="384dp"
+        android:layout_height="340dp"
         android:background="@drawable/card"
-        app:layout_constraintBottom_toBottomOf="@id/divider"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Text"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="36dp"
         android:alpha="0.75"
+        android:ellipsize="end"
         android:fontFamily="@font/doppio_one_regular"
-        android:gravity="end"
+        android:gravity="end|center_vertical"
+        android:maxLines="2"
         android:text=""
         android:textColor="#55423866"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/resultTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,81 +38,90 @@
 
     <TextView
         android:id="@+id/resultTextView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="32dp"
+        android:ellipsize="end"
         android:fontFamily="@font/doppio_one_regular"
-        android:gravity="end"
+        android:gravity="end|center_vertical"
+        android:maxLines="2"
         android:text=""
         android:textColor="@color/darkBrown"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@id/divider"
-        app:layout_constraintEnd_toEndOf="@+id/Text"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Text"
-        app:layout_constraintTop_toBottomOf="@+id/Text" />
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Text"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/divider"
         android:layout_width="32dp"
         android:layout_height="4dp"
-        android:layout_marginTop="8dp"
-
         android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Ac"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/doppio_one_regular"
         android:text="@string/ac"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/back"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@id/back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        app:layout_constraintTop_toBottomOf="@+id/background" />
 
     <ImageButton
         android:id="@+id/back"
         style="@style/circleButton.Normal"
         android:layout_width="78dp"
         android:layout_height="78dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@null"
         android:src="@drawable/arrow_left_02"
-        app:layout_constraintEnd_toStartOf="@+id/divide"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Ac"
-        app:layout_constraintTop_toTopOf="@+id/Ac" />
+        app:layout_constraintEnd_toStartOf="@id/divide"
+        app:layout_constraintStart_toEndOf="@id/Ac"
+        app:layout_constraintTop_toTopOf="@id/Ac" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/divide"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/doppio_one_regular"
         android:text="@string/divide"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/div"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="@+id/back" />
+        app:layout_constraintEnd_toStartOf="@id/div"
+        app:layout_constraintStart_toEndOf="@id/back"
+        app:layout_constraintTop_toTopOf="@+id/Ac" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/div"
         style="@style/circleButton.Operator"
         android:layout_width="78dp"
         android:layout_height="78dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/doppio_one_regular"
         android:text="@string/div"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/divide"
-        app:layout_constraintTop_toTopOf="@+id/divide" />
+        app:layout_constraintTop_toTopOf="@+id/Ac" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/seven"
         style="@style/circleButton.Normal"
@@ -123,7 +132,6 @@
         android:text="@string/seven"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/Ac"
-        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/Ac"
         app:layout_constraintTop_toBottomOf="@+id/Ac" />
 
@@ -135,6 +143,7 @@
         android:fontFamily="@font/doppio_one_regular"
         android:text="@string/eight"
         android:textSize="22sp"
+
         app:layout_constraintEnd_toEndOf="@+id/back"
         app:layout_constraintStart_toStartOf="@+id/back"
         app:layout_constraintTop_toTopOf="@+id/seven" />
@@ -172,8 +181,6 @@
         android:fontFamily="@font/doppio_one_regular"
         android:text="@string/four"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="@+id/seven"
-        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/seven"
         app:layout_constraintTop_toBottomOf="@+id/seven" />
 
@@ -223,7 +230,7 @@
         android:text="@string/one"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/four"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/four"
         app:layout_constraintTop_toBottomOf="@+id/four" />
 
@@ -236,7 +243,6 @@
         android:text="@string/two"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/five"
-        app:layout_constraintStart_toEndOf="@+id/one"
         app:layout_constraintStart_toStartOf="@+id/five"
         app:layout_constraintTop_toTopOf="@+id/one" />
 
@@ -249,7 +255,6 @@
         android:text="@string/three"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/six"
-        app:layout_constraintStart_toEndOf="@+id/two"
         app:layout_constraintStart_toStartOf="@+id/six"
         app:layout_constraintTop_toTopOf="@+id/two" />
 
